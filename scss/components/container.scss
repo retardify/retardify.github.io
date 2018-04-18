@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include landscape-down {
+        flex-direction: column;
+    }
+    @include tablet-up {
+        flex-direction: row;
+    }
+}

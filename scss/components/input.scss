@@ -1,0 +1,11 @@
+.input {
+    width: 90%;
+    height: 100px;
+    border-radius: 10px;
+    margin: 10px;
+    @include landscape-down {
+    }
+    @include tablet-up {
+        // height: 500px;
+    }
+}
