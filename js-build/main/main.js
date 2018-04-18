@@ -61,6 +61,30 @@ $('body').on('click', '.js-retardify', function() {
         }
     }
     $('.js-output').val(newstr);
+    copyOutput();
+});
+$('body').on('click', '.js-copy', function() {
+    copyOutput();
+});
+
+function copyOutput() {
+    if ($('#js-checkbox').is(':checked')) {
+        $('.js-output').select();
+        document.execCommand('Copy');
+        if (window.getSelection) {
+            window.getSelection().removeAllRanges();
+        } else if (document.selection) {
+            document.selection.empty();
+        }
+    }
+}
+
+$(document).keypress(function(e) {
+    if (e.which == 13) {
+        $('.js-retardify')
+            .first()
+            .click();
+    }
 });
 
 function setCharAt(str, index, chr) {
