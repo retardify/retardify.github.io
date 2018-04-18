@@ -19,10 +19,12 @@ $('body').on('click', '.js-retardify', function() {
             }
         } else if (wordLength == 2) {
             numberOfUppercase = 1;
+        } else if (wordLength == 1) {
+            numberOfUppercase = 0;
         }
         console.log('number of uppercases: ' + numberOfUppercase);
         var upperCaseAssigned = 0;
-        if (wordLength > 1) {
+        if (wordLength > 0) {
             var tempWord = word;
             do {
                 for (var i2 = 0; i2 < wordLength; i2++) {
